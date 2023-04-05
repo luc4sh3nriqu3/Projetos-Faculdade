@@ -1,0 +1,27 @@
+.data
+    idioma: .space 20
+.text
+
+.globl main
+
+main:
+    li $v0, 5                                           #Le o numero K
+    syscall
+    move $s0, $v0                                       #$s0 = K
+    
+    li $v0, 8                                           # Le uma string
+    la $a0, idioma
+    la $a1, 20
+    syscall
+    
+    li $v0, 4
+    la $a0, idioma
+    syscall
+    
+    li $v0, 1
+    move $a0, $s0
+    syscall
+    
+    li $v0, 10
+    syscall
+    
